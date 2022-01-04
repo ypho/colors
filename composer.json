@@ -19,5 +19,8 @@
             "name": "Ivo Geersen",
             "email": "ivo@ypho.nl"
         }
-    ]
+    ],
+    "scripts": {
+        "test": "phpunit"
+    }
 }
