@@ -1,4 +1,8 @@
 # Colors
+![License](https://img.shields.io/github/license/ypho/colors)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/ypho/colors/Installation%20&%20Tests)
+![Code Size](https://img.shields.io/github/languages/code-size/ypho/colors)
+
 Colors is a small package that contains 22 color palettes. Each palette has ten shades from light to dark. The colors are based on the [TailwindCSS](https://tailwindcss.com/docs/customizing-colors#default-color-palette) colors. 
 
 ## Installation
