@@ -17,7 +17,9 @@
     "authors": [
         {
             "name": "Ivo Geersen",
-            "email": "ivo@ypho.nl"
+            "email": "ivo@ypho.nl",
+            "homepage": "https://ypho.nl",
+            "role": "Developer"
         }
     ],
     "scripts": {
