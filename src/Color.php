@@ -69,7 +69,7 @@ class Color
     {
         $arrColors = [];
 
-        if (is_array($only) > 0) {
+        if (is_array($only) && count($only) > 0) {
             foreach ($only as $color) {
                 $arrColors[] = self::COLORS[$color][$shadeIndex] ?? throw new Exception('Given Palette and/or Shade not found!');
             }
