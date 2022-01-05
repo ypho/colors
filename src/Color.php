@@ -39,7 +39,7 @@ class Color
      * @return string
      * @throws Exception
      */
-    public static function getSingleColor(string $palette = 'red', int $shadeIndex = 3): string
+    public static function getSingleColor(string $palette = 'red', int $shadeIndex = 5): string
     {
         return self::COLORS[$palette][$shadeIndex] ?? throw new Exception('Given Palette and/or Shade not found!');
     }
@@ -61,18 +61,22 @@ class Color
      * (0 = lightest, 9 = darkest)
      *
      * @param int $shadeIndex
-     * @param array $excludingColors
+     * @param array|null $only
      * @return string[]
      * @throws Exception
      */
-    public static function getColorsByShade(int $shadeIndex = 3, array $excludingColors = []): array
+    public static function getColorsByShade(int $shadeIndex = 5, array $only = null): array
     {
         $arrColors = [];
-        foreach (self::COLORS as $colorName => $colorPalette) {
-            if (in_array($colorName, $excludingColors)) {
-                continue;
+
+        if (is_array($only) > 0) {
+            foreach ($only as $color) {
+                $arrColors[] = self::COLORS[$color][$shadeIndex] ?? throw new Exception('Given Palette and/or Shade not found!');
             }
-            $arrColors[] = $colorPalette[$shadeIndex] ?? throw new Exception('Given shade not found, choose between 0 and 9!');
+        } else {
+            foreach (self::COLORS as $colorPalette) {
+                $arrColors[] = $colorPalette[$shadeIndex] ?? throw new Exception('Given Shade not found, choose between 0 and 9!');
+            }
         }
 
         return $arrColors;
